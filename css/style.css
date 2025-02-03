@@ -1,0 +1,388 @@
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --clr-primary: #1a2448;
+  --clr-secondary: #8d20fa;
+}
+
+/* GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* HEADER */
+
+/* header,
+header * {
+  outline: 2px solid red;
+} */
+
+header {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+}
+
+header .primary-nav {
+  width: max(200px, 10%);
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+header .nav-header {
+  padding: 30px 6% 30px 3%;
+  background: var(--clr-primary);
+}
+
+header .nav-list {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  margin-right: 75%;
+  height: 100%;
+  background: transparent;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  backdrop-filter: blur(5px);
+  transition: 0.5s;
+}
+
+header .nav-list.active {
+  visibility: visible;
+  opacity: 1;
+  margin-right: 0;
+}
+
+header .nav-list li {
+  list-style: none;
+}
+
+header .nav-list li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--clr-primary);
+}
+
+header .nav-list li a:hover {
+  color: var(--clr-secondary);
+}
+
+header .search {
+  position: relative;
+  z-index: 100;
+  align-self: flex-start;
+  padding: 30px 4% 30px 6%;
+  background: var(--clr-primary);
+}
+
+header .menu {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+
+header .menu.active {
+  transform: rotate(45deg);
+}
+
+header .logo {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  margin-left: 4rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+header .search input {
+  border: none;
+  outline: none;
+  width: 80%;
+  padding: 4px 15px;
+  background: transparent;
+  backdrop-filter: blur(5px);
+  color: #fff;
+}
+
+header .search input:hover::placeholder,
+header .search input:focus::placeholder {
+  background: #fff;
+  color: var(--clr-primary);
+}
+
+header .search input::placeholder {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+header .search ion-icon {
+  position: absolute;
+  color: #fff;
+  font-size: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* BANNER */
+
+/* .banner,
+.banner * {
+  outline: 2px solid lime;
+} */
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(-45deg, #d8e7fc, #e8d8fc);
+  align-items: end;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 100px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  transition: 0.5s;
+}
+
+/* SOCIAL */
+
+.social-container {
+  position: absolute;
+  left: 150px;
+  bottom: 135px;
+  display: flex;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.social-container a {
+  text-decoration: none;
+  color: var(--clr-primary);
+  font-size: 1.5rem;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+}
+
+.social-container a:hover {
+  color: var(--clr-secondary);
+}
+
+/* SWIPER */
+
+/* .swiper,
+.swiper * {
+  outline: 1px solid lime;
+} */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.swiper .model-img {
+  position: absolute;
+  max-width: 70%;
+  opacity: 0.85;
+  visibility: visible;
+  bottom: 100px;
+  left: 120px;
+  transition: 0.5s ease-in-out;
+  transform-origin: bottom;
+}
+
+.swiper.active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.swiper .control {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 200px;
+  width: 50px;
+  z-index: 100;
+}
+
+.swiper .swiper-button-prev {
+  position: absolute;
+  left: 25%;
+  top: 30%;
+  transform: rotateZ(90deg);
+  width: 25px;
+  height: 25px;
+}
+
+.swiper .swiper-button-next {
+  position: absolute;
+  right: 25%;
+  top: 80%;
+  transform: rotateZ(90deg);
+  width: 25px;
+  height: 25px;
+}
+
+.swiper .swiper-button-next::after,
+.swiper .swiper-button-prev::after {
+  font-size: 0.8rem;
+  line-height: 0;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  border-radius: 50%;
+  transition: 0.5s;
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper .swiper-button-next:hover,
+.swiper .swiper-button-prev:hover {
+  border-radius: 50%;
+  background: rgba(26, 36, 72, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.swiper .swiper-pagination {
+  position: absolute;
+  right: 50% !important;
+  top: 50% !important;
+  transform: translate(50%, -50%) !important;
+}
+
+.swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+  opacity: 1;
+  border: 1px solid var(--clr-primary);
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background: var(--clr-primary);
+}
+
+/* CONTENT */
+
+.content {
+  position: absolute;
+  z-index: 100;
+  max-width: clamp(300px, 25%, 600px);
+  right: min(20%, 200px);
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: 0.5s;
+}
+
+.content.active {
+  transform: translateY(-50%) scale(0);
+}
+
+.content h2 {
+  font-size: clamp(0.5rem, 2vw + 1rem, 3rem);
+  color: var(--clr-primary);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.content p {
+  text-align: end;
+  color: var(--clr-primary);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.content a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: 0.3s;
+  background: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  padding: 10px 20px;
+}
+
+.content a:hover {
+  color: var(--clr-primary);
+  background: transparent;
+}
+
+/* WATERMARK */
+
+.watermark-container {
+  position: absolute;
+  inset: 0;
+}
+
+.watermark-container .title {
+  font-family: "Berkshire Swash", sans-serif;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  z-index: 10;
+  opacity: 0.1;
+  filter: blur(1px);
+}
+
+.watermark-container .title-left {
+  position: absolute;
+  font-size: 8rem;
+  left: 300px;
+  top: 120px;
+  transform: rotate(90deg);
+  transform-origin: left;
+}
+
+.watermark-container .title-right {
+  position: absolute;
+  font-size: clamp(1rem, 4vw + 1rem, 10rem);
+  right: 120px;
+  bottom: 200px;
+}
