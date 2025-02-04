@@ -239,7 +239,7 @@ header .search ion-icon {
   opacity: 0.85;
   visibility: visible;
   bottom: var(--main-padding);
-  left: 120px;
+  left: 6%;
   transition: var(--transition-fast);
   transform-origin: bottom;
 }
@@ -589,14 +589,6 @@ header .search ion-icon {
 }
 
 /* MEDIA QUERIES */
-
-@media (max-width: 1024px) {
-  .swiper .model-img {
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 100%;
-  }
-}
 
 @media (max-width: 768px) {
   :root {
